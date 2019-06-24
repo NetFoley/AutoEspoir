@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Life" sid="285003929987345" static="0" type="number">60</variable>
+        <event-group description="" sid="995203552749825" title="Skeleton">
+            <sub-events>
+                <event-block sid="187221212087039">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="927344280523662" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">not_attack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="395789174081460" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">HitDone</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="663332550659586">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="968194160843041" type="SPR_Skeleton">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">7</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="296486228165380" type="SPR_Skeleton">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="420400460720882" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">HitDone</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="551530991872420" type="SPR_Skeleton">
+                            <param id="0" name="Object">SPR_SkeletonHit</param>
+                            <param id="1" name="Layer">&quot;jeu&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="807930589322095" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">HitDone</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="511407877177909">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="719898341626897" type="SPR_Skeleton" />
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="657094477481318" type="SPR_Skeleton">
+                            <param id="0" name="Scale">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="801783468522575">
+                    <conditions>
+                        <condition behavior="Platform" id="1" name="Compare speed" sid="782244343469437" type="SPR_Skeleton">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Speed">0</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="233296757017372" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">not_attack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="396646380991427" type="SPR_Skeleton">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="893271887673094">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="852879521023610" type="SPR_Skeleton" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="344013074269284" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">not_attack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="784923055836560" type="SPR_Skeleton">
+                            <param id="0" name="Animation">&quot;Move&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="404653855036584" type="SPR_Skeleton">
+                            <param id="0" name="Speed">self.Platform.MaxSpeed/25</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="312075005584808">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="316064084964559" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="587572129336788" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">not_attack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="984843386610576" type="SPR_Skeleton">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="170570762217485" type="SPR_Skeleton">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="625120964579210">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="652857739908199" type="Keyboard">
+                            <param id="0" name="Key">81</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="906357287123489" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">not_attack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="880598604434349" type="SPR_Skeleton">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="331185752642662" type="SPR_Skeleton">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="622579947240059">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="592175809426846" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="258072758571626" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">not_attack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="120352881275117" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">not_attack</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="961825511301686" type="SPR_Skeleton">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="351162875391011" type="SPR_Skeleton">
+                            <param id="0" name="Speed">SPR_Skeleton.HitSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="691881002581044">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="863084859342376" type="SPR_Skeleton">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="131089325967041" type="SPR_Skeleton">
+                            <param id="0" name="Instance variable">not_attack</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="278640952379347" title="Enemy">
+            <sub-events>
+                <event-block sid="560736663525265">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="499427717605952" type="Enemy" />
+                        <condition id="2" inverted="1" name="Is playing" sid="944034232713014" type="Enemy">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="527210045779520">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="545542071595738" type="Enemy">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">SPR_Skeleton.X+Self.Range</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="116604415711719" type="Enemy">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">SPR_Skeleton.X</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="184443394957519" type="Enemy">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">SPR_Skeleton.X+20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="686448170430027" type="Enemy">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="570161932693508" type="Enemy">
+                                    <param id="0" name="Animation">&quot;Run&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="136737146521670" type="Enemy">
+                                    <param id="0" name="Instance variable">Agro</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="499627464847515">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="446532082025859" type="Enemy">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">SPR_Skeleton.X</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="565658221198267" type="Enemy">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">SPR_Skeleton.X-Self.Range</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="354510707229448" type="Enemy">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">SPR_Skeleton.X-20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="633638912358853" type="Enemy">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="957170775876638" type="Enemy">
+                                    <param id="0" name="Animation">&quot;Run&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="141210446818768" type="Enemy">
+                                    <param id="0" name="Instance variable">Agro</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="208745503583539">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="736116150688390" type="Enemy">
+                            <param id="0" name="Instance variable">gotHit</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="347146665586191" type="Enemy">
+                            <param id="0" name="Vector X">Self.speedX</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="214949341996774" type="Enemy">
+                            <param id="0" name="Vector Y">Self.speedY</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="795242154698236" type="Enemy">
+                            <param id="0" name="Instance variable">speedY</param>
+                            <param id="1" name="Value">40</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="576188409834510">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="909276741433641" type="Enemy">
+                            <param id="0" name="Object">SPR_InvisiblePlatform</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="859859950248713" type="Enemy">
+                            <param id="0" name="Instance variable">gotHit</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="387875584278868" type="Enemy">
+                            <param id="0" name="Max Speed">Self.initialSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="594555517020853">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="544198343825626" type="Enemy">
+                            <param id="0" name="Object">SPR_SkeletonHit</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="190648037764140" type="Enemy">
+                            <param id="0" name="Instance variable">gotHit</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="353785976487847" type="Enemy">
+                            <param id="0" name="Instance variable">speedY</param>
+                            <param id="1" name="Value">-500</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="428989708573434" type="Enemy">
+                            <param id="0" name="Max Speed">SPR_Skeleton.HitPower</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="449760761049335" type="Enemy">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">-5</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="518250737490483">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="852239268345112" type="Enemy">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">SPR_Skeleton.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="354735458851671" type="Enemy">
+                                    <param id="0" name="Instance variable">speedX</param>
+                                    <param id="1" name="Value">SPR_Skeleton.HitPower</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="877753625282408">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="308120284697656" type="Enemy">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="X co-ordinate">SPR_Skeleton.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="221642387490274" type="Enemy">
+                                    <param id="0" name="Instance variable">speedX</param>
+                                    <param id="1" name="Value">-SPR_Skeleton.HitPower</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="935657816674609">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="546264176102066" type="Enemy">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">SPR_Skeleton.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="835132811950543" type="Enemy">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="710659945831984">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="924036812322488" type="Enemy">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">SPR_Skeleton.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="555943739465295" type="Enemy">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="698919035441661">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="990298964431906" type="Enemy" />
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="387799258214195" type="Enemy">
+                            <param id="0" name="Scale">4</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="327067038909138" type="Enemy">
+                            <param id="0" name="Instance variable">initialSpeed</param>
+                            <param id="1" name="Value">self.Platform.MaxSpeed</param>
+                        </action>
+                        <action id="1" name="Set blend mode" sid="817790030966010" type="Enemy">
+                            <param id="0" name="Blend mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="109542492482592">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="579420001368478" type="Enemy">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="365908123729123" type="Enemy" />
+                    </actions>
+                </event-block>
+                <event-block sid="772776296306680">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="921702904458366" type="Enemy">
+                            <param id="0" name="Object">SPR_Skeleton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="953981306989890" type="Enemy">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="126041769631810">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="268820431714829" type="Enemy">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="212209291486956" type="Enemy">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="519392985493804" type="Enemy">
+                            <param id="0" name="Animation">&quot;Run&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="706524281252496" title="Other">
+            <sub-events>
+                <event-block sid="368224084114491">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="340107893990506" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="375271211428382" type="SPR_SkeletonHit" />
+                        <action id="-3" name="Create object" sid="628806756652141" type="System">
+                            <param id="0" name="Object to create">SPR_Spaceship</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">100</param>
+                            <param id="3" name="Y">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="893886063944103" title="Chest">
+            <sub-events>
+                <event-block sid="952886777688491">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="183233412198476" type="CHEST_HitSpeed" />
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="472250886057580" type="CHEST_HitSpeed">
+                            <param id="0" name="Scale">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="248805167446297">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="250729757356274" type="CHEST_HitSpeed">
+                            <param id="0" name="Object">SPR_Skeleton</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="795640789646919" type="CHEST_HitSpeed">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="467241282795738" type="CHEST_HitSpeed">
+                            <param id="0" name="Animation">&quot;Animation2&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="706912576734781" type="System">
+                            <param id="0" name="Seconds">0.7</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="613624324221022" type="CHEST_HitSpeed">
+                            <param id="0" name="Object">SPR_Bonus</param>
+                            <param id="1" name="Layer">&quot;jeu&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="699773796855906" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="332221842738824" type="CHEST_HitSpeed">
+                            <param id="0" name="Object">Enemy</param>
+                            <param id="1" name="Layer">&quot;jeu&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="309931886298879" type="CHEST_HitSpeed">
+                            <param id="0" name="Object">Enemy</param>
+                            <param id="1" name="Layer">&quot;jeu&quot;</param>
+                            <param id="2" name="Image point">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="232152968178762" title="Buff_Speed">
+                    <sub-events>
+                        <event-block sid="475356493909515">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="897060375751230" type="SPR_Bonus" />
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="523170157120651" type="SPR_Bonus">
+                                    <param id="0" name="Scale">4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="744853794030758">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="967355381068782" type="SPR_Bonus">
+                                    <param id="0" name="Object">SPR_Skeleton</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="304976097326240" type="SPR_Bonus">
+                                    <param id="0" name="Animation">&quot;Death&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="669164715070468" type="SPR_Bonus">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="420876674088834">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="440590546824669" type="SPR_Bonus">
+                                    <param id="0" name="Animation">&quot;Death&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="510662729782257" type="SPR_Skeleton">
+                                    <param id="0" name="Instance variable">HitSpeed</param>
+                                    <param id="1" name="Value">30</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="534487092070395" type="SPR_Skeleton">
+                                    <param id="0" name="Max Speed">Self.Platform.MaxSpeed+500</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="511614079169387" type="SPR_Bonus" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="902383136424389" title="Spaceship">
+            <sub-events>
+                <event-block sid="338102210959202">
+                    <conditions>
+                        <condition id="12" name="Compare speed" sid="711962798529353" type="SPR_Spaceship">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
