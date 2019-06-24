@@ -354,7 +354,7 @@
                     </conditions>
                     <actions>
                         <action id="9" name="Set scale" sid="387799258214195" type="Enemy">
-                            <param id="0" name="Scale">4</param>
+                            <param id="0" name="Scale">3</param>
                         </action>
                         <action id="-10" name="Set value" sid="327067038909138" type="Enemy">
                             <param id="0" name="Instance variable">initialSpeed</param>
