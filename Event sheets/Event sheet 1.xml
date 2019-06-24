@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <include>Event sheet 2</include>
         <variable constant="0" name="Life" sid="285003929987345" static="0" type="number">60</variable>
         <event-group description="" sid="995203552749825" title="Skeleton">
             <sub-events>
@@ -354,7 +355,7 @@
                     </conditions>
                     <actions>
                         <action id="9" name="Set scale" sid="387799258214195" type="Enemy">
-                            <param id="0" name="Scale">4</param>
+                            <param id="0" name="Scale">2</param>
                         </action>
                         <action id="-10" name="Set value" sid="327067038909138" type="Enemy">
                             <param id="0" name="Instance variable">initialSpeed</param>
@@ -419,9 +420,13 @@
                         <action id="-9" name="Destroy" sid="375271211428382" type="SPR_SkeletonHit" />
                         <action id="-3" name="Create object" sid="628806756652141" type="System">
                             <param id="0" name="Object to create">SPR_Spaceship</param>
-                            <param id="1" name="Layer">1</param>
+                            <param id="1" name="Layer">0</param>
                             <param id="2" name="X">100</param>
                             <param id="3" name="Y">100</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="378919742423313" type="System">
+                            <param id="0" name="Variable">Life</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
